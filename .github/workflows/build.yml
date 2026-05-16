@@ -7,7 +7,7 @@ on:
         description: "Brand: Select your brand"
         required: true
         type: choice
-        default: oneplus
+        default: xiaomi
         options:
           - Manual-Type
           - oneplus
@@ -24,13 +24,13 @@ on:
         description: "SOC: Type your soc"
         required: true
         type: string
-        default: "sm8550"
+        default: "sdm845"
 
       clang_version:
         description: "Clang-Version: Select the clang version of ur kernel"
         required: true
         type: choice
-        default: clang-r563880c
+        default: clang-r536225
         options:
           - clang-r416183b1 #lineage-19.1 in android12-qpr3-release
           - clang-r450784d  #lineage-20.0 in android13-qpr3-release
@@ -70,13 +70,13 @@ on:
         description: "Kernel-Branch: such as lineage-23.2 sixteen-qpr1 etc."
         required: true
         type: string
-        default: ""
+        default: "lineage-22.2"
         
       kernel_configs:
         description: "Kernel-Configs: Select ur kernel configs(Use Manual-Type to custom it)"
         required: true
         type: choice
-        default: oplus-sm8550-los
+        default: Manual-Type
         options:
           - Manual-Type
           - oplus-sm8150-los
@@ -91,12 +91,13 @@ on:
         description: "Kernel-Configs-Manual: If u selected Manual-Type in previous options, manually type ur kernel configs here."
         required: false
         type: string
-        default: ""
+        default: "vendor/xiaomi/mi845_defconfig vendor/xiaomi/polaris.config"
 
       ksu_type:
         description: "KSU: KernelSU Version"
         required: true
         type: choice
+        default: KernelSU-by-xx
         options:
           - None
           - Official-KernelSU
@@ -126,7 +127,7 @@ on:
         description: "SUSFS-NONGKI: select ur kernel version(for nongki)"
         required: true
         type: choice
-        default: None
+        default: 4.9
         options:
           - None
           - "4.9"
@@ -138,7 +139,7 @@ on:
         description: "DroidSpaces: Enable DroidSpaces"
         required: true
         type: choice
-        default: None
+        default: 4.4-4.9
         options:
           - None
           - "6.12"
@@ -153,7 +154,7 @@ on:
         description: "Has-Modules-Repo: Enable this ur kernel has modules repo"
         required: true
         type: boolean
-        default: true
+        default: false
 
       enable_tmpfs-xattr:
         description: "TMPFS_XATTR: U can enable this if ur kernel has no CONFIG_TMPFS_XATTR=y"
@@ -165,13 +166,13 @@ on:
         description: "Enable-GCC: Enable the GCC support"
         required: true
         type: boolean
-        default: false
+        default: true
       
       enable_gcc_32bits:
         description: "Enable-GCC-32Bits: Enable the 32Bits GCC support"
         required: true
         type: boolean
-        default: false
+        default: true
 
       fuck_modules_sig_protect:
         description: "Fuck-Modules-Sig-Protect: FUCK MODULES SIG Protectttt"
@@ -183,7 +184,7 @@ on:
         description: "Fuck-Werror: FUCK WERROR IN CONFIGS"
         required: true
         type: boolean
-        default: false
+        default: true
 
       enable_my_own_susfs_patch:
         description: "fuck susfs: fuck susfs"
